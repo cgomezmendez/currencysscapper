@@ -23,7 +23,6 @@ class CurrencyValue(db.Entity):
     currency = Required(Currency)
     date = Required(date, unique=False)
     value = Required(float)
-sql_debug(True)
 db.generate_mapping(create_tables=True)
 
 @db_session
