@@ -8,12 +8,13 @@ def saveCurrenciesTodayData():
 	currenciesTodayValues = Scrapper.getCurrencies()
 	currentDate = time.strftime("%d/%m/%Y")
 	currencies = Scrapper.getCurrencies();
-	currentDollarValue = CurrencyValue.get(date=currentDate)
+	currentDollarValue = CurrencyValue.get(date=currentDate,currency=Currency.get(name="Dollar"))
 	if (currentDollarValue is None):
 		currentDollarValue  = CurrencyValue(date=currentDate,currency=Currency.get(name="Dollar"),value=currencies['dollar'])
+		print('test')
 	else:
 		currentDollarValue.value = currencies['dollar']
-	currentEuroValue = CurrencyValue.get(date=currentDate)
+	currentEuroValue = CurrencyValue.get(date=currentDate,currency=Currency.get(name="Euro"))
 	if (currentEuroValue is None):
 		currentEuroValue  = CurrencyValue(date=currentDate,currency=Currency.get(name="Euro"),value=currencies['euro'])
 	else:
