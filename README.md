@@ -10,3 +10,7 @@ Requeriments
 *ponyorm
 *requests
 
+
+Setup instructions
+==================
+please run setup.py in order to configure the database
